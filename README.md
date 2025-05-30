@@ -1,46 +1,53 @@
-# React & Node.js Skill Test
 
-## Estimated Time
+## Steps to Run
 
-- 60 min
+1. **Clone the repository to your IDE**
 
-## Requirements
+2. **Set up Client environment**
+   - Create a .env file in the Client directory
+   - Add: REACT_APP_BASE_URL='http://localhost:5001/'
+   - because our server is configured to run at this address
 
-- Bug fix to login without any issues (20min) <br/>
-  There is no need to change or add login function.
-  Interpret the code structure and set the correct environment by the experience of building projects. <br/>
-  Here is a login information. <br/>
-  ✓ email: admin@gmail.com  ✓ password: admin123
+3. **Set up Server environment**
+   - Create a .env file in the Server directory
+   - Add: JWT_SECRET="Any strong random key to secure authentication"
 
-- Implement Restful API of "Meeting" in the both of server and client sides (40min)<br/>
-  Focus Code Style and Code Optimization. <br/>
-  Reference other functions.
+4. **Start the Client**
+   - Navigate to Client directory
+   - Run npm install
+   - Run npm start
 
+5. **Start the Server**
+   - Navigate to Server directory
+   - Run npm install
+   - Run npm start
 
-Steps to Run - 
-1. Clone the repository to your IDE
-2. Create a .env in Client Directory and type REACT_APP_BASE_URL='http://localhost:5001/' as our server is configured to run at this address
-3. Create a .env in Server and type JWT_SECRET= """Any strong random key to secure authentication"""
-4. Open 3 Terminals, 
-  4.1 Navigate to Client, Run npm install then npm start
-  4.2 Navigate to Server, Run npm install then npm start
-  4.3 Be on the root directory, Start the MongoDB services by running brew services start mongodb-community 
-    4.3.1 If MongoDB services not installed 
-    - run brew tap mongodb/brew
-    - run brew install mongodb-community   
-    Then start the services
-5. Use credentials ✓ email: admin@gmail.com  ✓ password: admin123 to login    
+6. **Start MongoDB services**
+   - From the root directory, run: brew services start mongodb-community
+   
+   **If MongoDB is not installed:**
+   - Run brew tap mongodb/brew
+   - Run brew install mongodb-community
+   - Run brew services start mongodb-community
 
+7. **Login to the application**
+   - Use credentials: 
+     - Email: admin@gmail.com
+     - Password: admin123
 
+## Changes/Additions
 
-Changes/Additions - 
+### Bug Fixes for Login
+1. **Client-side fix**: Added .env file in client directory to use Base URL in API file
+2. **Server-side fix**: Added .env file in Server directory to secure authentication using a JWT key (was previously hardcoded)
 
-Bug Fixes of Login-
-1. Addition of .env in client directory to use Base Url in Api file (Client side)
-2. Addition of .env in Server directory to secure the authentication using a JWT key which was hardcoded in the project
+### Restful API "Meeting"
+1. **Backend Implementation**:
+   - Completed the AddData and FetchAllData functions
+   - Completed the Controllers for functions: Add, Index, View, Delete, DeleteMany
+   - Set up routes for the backend so declared functions can interact with frontend payload
+   - Added Meeting Schema model to add entries in the database
 
-Restful API "Meeting"
-1. Completed the AddData and FetchAlldata functions
-2. Completed the Controllers for functions of Add, Index, View, Delete, DeleteMany
-3. Set up routes for the backend so that these declared functions can interact with frontend payload
-4. Added Meeting Schema model to add entries in the database. 
+2. **Frontend Integration**:
+   - Connected frontend components with backend API endpoints
+   - Implemented proper error handling and data validation
